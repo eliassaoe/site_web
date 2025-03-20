@@ -1,1166 +1,969 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8"/>
-    <title>Swifthelp - Infrastructure d'Agents IA pour booster vos ventes</title>
-    <meta content="Accompagnement personnalisé pour intégrer l'IA dans votre stratégie commerciale." name="description"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <title>LANC - Masterclass Gratuite SMMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/img/flags.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" as="style">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Intl Tel Input pour le sélecteur de pays avec drapeaux -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"></script>
+    
+    <!-- Meta tags Open Graph pour améliorer le tracking -->
+    <meta property="og:title" content="LANC - Masterclass Gratuite SMMA" />
+    <meta property="og:description" content="Apprenez à gagner jusqu'à 3872€/mois avec votre agence SMMA - Inscrivez-vous à notre masterclass gratuite" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lanc.fr" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1096588159367786507/1351641224662224896/LANC-5.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56VLESRL48"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-56VLESRL48');
+    </script>
+    
+    <!-- TikTok Pixel Code - Optimisé -->
+    <script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        
+        // Chargement avec ID de pixel
+        ttq.load('CV2539RC77UAL9J2PSJG');
+        
+        // IMPORTANT: Activer les cookies first-party pour l'Advanced Matching
+        ttq.enableCookie();
+        
+        // Enregistrement de la visite de page
+        ttq.page();
+    }(window, document, 'ttq');
+    </script>
+
+    <!-- Nouveau code pour Advanced Matching sur page load -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get stored user identifiers from localStorage if available
+        const storedEmail = localStorage.getItem('user_email') || '';
+        const storedPhone = localStorage.getItem('user_phone') || '';
+        const storedExternalId = localStorage.getItem('user_external_id') || generateExternalId();
+        
+        // If we don't have an external ID stored, generate and save one
+        if (!localStorage.getItem('user_external_id')) {
+            localStorage.setItem('user_external_id', storedExternalId);
+        }
+        
+        // Fonction pour afficher un message de succès
+        function showSuccessMessage() {
+            // Créer un message de succès
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.innerHTML = `
+                <div style="background-color: rgba(76, 175, 80, 0.1); border: 2px solid #4CAF50; 
+                            padding: 15px; border-radius: 10px; margin: 20px 0; text-align: center;">
+                    <div style="color: #4CAF50; font-size: 32px; margin-bottom: 10px;">✓</div>
+                    <h3 style="color: #4CAF50; margin-bottom: 10px;">Inscription réussie !</h3>
+                    <p>Vous allez être redirigé vers la masterclass...</p>
+                </div>
+            `;
+            
+            // Remplacer le formulaire par le message de succès
+            const formCard = document.querySelector('.form-card');
+            formCard.innerHTML = '';
+            formCard.appendChild(successDiv);
+        }
+        
+        // Gérer la soumission du formulaire
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const emailInput = document.getElementById('email');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Validation améliorée de l'email
+            if (!validateEmail(emailInput.value)) {
+                emailInput.focus();
+                emailInput.classList.add('invalid');
+                document.getElementById('email-error-msg').textContent = 'Veuillez entrer un email valide';
+                return false;
+            }
+            
+            // Valider le numéro de téléphone
+            validatePhoneNumber();
+            if (!isPhoneValid) {
+                document.getElementById('phone').focus();
+                return false;
+            }
+            
+            // Nettoyer les entrées contre les injections
+            const sanitizedEmail = sanitizeInput(emailInput.value);
+            
+            // Récupérer le numéro complet avec l'indicatif
+            const fullPhoneNumber = phoneInput.getNumber();
+            
+            // Affichage du loader et désactivation du bouton
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            // Generate external ID if not already present
+            if (!localStorage.getItem('user_external_id')) {
+                const externalId = 'user_' + Math.random().toString(36).substring(2, 15) + 
+                                Math.random().toString(36).substring(2, 15);
+                localStorage.setItem('user_external_id', externalId);
+            }
+            
+            // Store user data
+            localStorage.setItem('user_email', sanitizedEmail);
+            localStorage.setItem('user_phone', fullPhoneNumber);
+            localStorage.setItem('registration_date', new Date().toISOString());
+            
+            // Préparer les données à envoyer
+            const formData = {
+                email: sanitizedEmail,
+                phone: fullPhoneNumber,
+                external_id: localStorage.getItem('user_external_id')
+            };
+            
+            // Tracking supprimé
+            
+            // Envoyer les données au webhook
+            try {
+                // Envoyer vers le webhook (si URL configurée)
+                if (WEBHOOK_URL && WEBHOOK_URL !== "VOTRE_URL_WEBHOOK") {
+                    await sendToWebhook(formData);
+                }
+                
+                // Afficher un message de succès avant la redirection
+                showSuccessMessage();
+                
+                // Après un court délai, rediriger vers la page de vente
+                setTimeout(function() {
+                    window.location.href = 'https://eliassaoe.github.io/page_vente/confirmation';
+                }, 1500);
+                
+            } catch (error) {
+                console.error("Erreur lors de l'envoi des données:", error);
+                
+                // En cas d'erreur, on redirige quand même pour ne pas bloquer l'utilisateur
+                setTimeout(function() {
+                    window.location.href = 'https://eliassaoe.github.io/page_vente/confirmation';
+                }, 1500);
+            }
+            
+            return false;
+        }
+        
+        // Fonction pour envoyer les données à votre webhook
+        async function sendToWebhook(data) {
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+                
+                return true;
+            } catch (error) {
+                console.error("Erreur d'envoi vers le webhook:", error);
+                return false;
+            }
+        }
+        
+        // Always identify with whatever data we have, even if fields are empty
+        ttq.identify({
+            email: storedEmail,
+            phone_number: storedPhone,
+            external_id: storedExternalId
+        });
+        
+        function initFormValidation() {
+            const emailInput = document.getElementById('email');
+            const emailErrorMsg = document.getElementById('email-error-msg');
+            
+            // Validation d'email en temps réel
+            emailInput.addEventListener('input', function() {
+                const isValid = validateEmail(this.value);
+                const parent = this.closest('.form-group');
+                
+                if (this.value.trim() === '') {
+                    // Champ vide
+                    this.classList.remove('valid', 'invalid');
+                    parent.querySelector('.validation-icon.success').classList.remove('show');
+                    parent.querySelector('.validation-icon.error').classList.remove('show');
+                    emailErrorMsg.textContent = '';
+                } else if (isValid) {
+                    // Email valide
+                    this.classList.add('valid');
+                    this.classList.remove('invalid');
+                    parent.querySelector('.validation-icon.success').classList.add('show');
+                    parent.querySelector('.validation-icon.error').classList.remove('show');
+                    emailErrorMsg.textContent = '';
+                } else {
+                    // Email invalide
+                    this.classList.add('invalid');
+                    this.classList.remove('valid');
+                    parent.querySelector('.validation-icon.error').classList.add('show');
+                    parent.querySelector('.validation-icon.success').classList.remove('show');
+                    emailErrorMsg.textContent = 'Format d\'email invalide';
+                }
+            });
+        }
+        
+        function validatePhoneNumber() {
+            const phoneInput = document.querySelector("#phone");
+            const errorMsg = document.querySelector("#phone-error-msg");
+            const parent = phoneInput.closest('.form-group');
+            
+            if (phoneInput.value.trim()) {
+                if (window.intlTelInputGlobals.getInstance(phoneInput).isValidNumber()) {
+                    phoneInput.classList.remove("error");
+                    phoneInput.classList.add('valid');
+                    phoneInput.classList.remove('invalid');
+                    parent.querySelector('.validation-icon.success').classList.add('show');
+                    parent.querySelector('.validation-icon.error').classList.remove('show');
+                    errorMsg.innerHTML = "";
+                    isPhoneValid = true;
+                } else {
+                    phoneInput.classList.add("error");
+                    phoneInput.classList.add('invalid');
+                    phoneInput.classList.remove('valid');
+                    parent.querySelector('.validation-icon.error').classList.add('show');
+                    parent.querySelector('.validation-icon.success').classList.remove('show');
+                    errorMsg.innerHTML = "Veuillez entrer un numéro valide";
+                    isPhoneValid = false;
+                }
+            } else {
+                phoneInput.classList.add("error");
+                phoneInput.classList.remove('valid', 'invalid');
+                parent.querySelector('.validation-icon.success').classList.remove('show');
+                parent.querySelector('.validation-icon.error').classList.remove('show');
+                errorMsg.innerHTML = "";
+                isPhoneValid = false;
+            }
+        }
+        
+        // Fonction pour suivre le clic sur le bouton - tracking supprimé
+        function trackButtonClick() {
+            // Tracking supprimé
+        }
+        
+        // Also update the ViewContent event with user data
+        ttq.track('ViewContent', {
+            'content_type': 'product',
+            'content_name': 'lanc_smma_masterclass',
+            'email': storedEmail, 
+            'phone_number': storedPhone,
+            'external_id': storedExternalId
+        });
+    });
+
+    // Helper function to generate a persistent external ID
+    function generateExternalId() {
+        return 'user_' + Math.random().toString(36).substring(2, 15) + 
+               Math.random().toString(36).substring(2, 15);
+    }
+    </script>
+    
+    <!-- Fonction améliorée pour l'Advanced Matching TikTok -->
+    <script>
+    function enhanceTikTokMatching(userData) {
+        if (typeof ttq === 'undefined') return;
+        
+        // Generate external ID if not already present
+        if (!localStorage.getItem('user_external_id')) {
+            const externalId = 'user_' + Math.random().toString(36).substring(2, 15) + 
+                            Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('user_external_id', externalId);
+        }
+        
+        // Get the external ID
+        const externalId = localStorage.getItem('user_external_id');
+        
+        // Always pass all available identifiers
+        ttq.identify({
+            email: userData.email || '',
+            phone_number: userData.phone || '',
+            external_id: externalId || ''
+        });
+        
+        console.log("Advanced Matching TikTok activé");
+    }
+    </script>
+    
+    <!-- Fonction optimisée de tracking TikTok -->
+    <script>
+    function trackTikTokEvent(eventType, eventName) {
+        if (typeof ttq === 'undefined') return;
+        
+        ttq.ready(function() {
+            try {
+                // Get all stored identifiers
+                const email = localStorage.getItem('user_email') || '';
+                const phone = localStorage.getItem('user_phone') || '';
+                const externalId = localStorage.getItem('user_external_id') || '';
+                
+                // Create event ID
+                const eventId = eventType.toLowerCase() + "_" + Date.now();
+                
+                // Track with all identifiers
+                ttq.track(eventType, {
+                    "content_type": "form_submission",
+                    "content_name": eventName || "lead_capture",
+                    "event_id": eventId,
+                    "email": email,
+                    "phone_number": phone,
+                    "external_id": externalId
+                });
+                
+                console.log("TikTok event tracked: " + eventType + " with ID: " + eventId);
+            } catch (e) {
+                console.error("Error tracking TikTok event: ", e);
+            }
+        });
+    }
+    </script>
+    
     <style>
-        /* Base styles */
         :root {
-            --primary: #3366FF;
-            --primary-dark: #2851CC;
-            --secondary: #8833FF;
-            --secondary-dark: #7722EE;
-            --light-bg: #f8f9fa;
-            --dark-text: #1a1a2e;
-            --body-text: #4a4a68;
-            --light-text: #777;
-            --border-color: #e7e9ed;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --button-shadow: 0 8px 15px rgba(51, 102, 255, 0.15);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --primary: #0052CC;
+            --secondary: #003D99;
+            --highlight: #0074E0;
+            --black: #000000;
+            --white: #ffffff;
+            --gray-light: #f0f0f0;
+            --gray-dark: #333333;
+            --success: #4CAF50;
         }
         
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            font-family: 'Be Vietnam Pro', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--body-text);
-            background-color: #fff;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-font-smoothing: antialiased;
-            -o-font-smoothing: antialiased;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            background-color: var(--black);
+            line-height: 1.5;
+            font-size: 16px;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 550px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
+            flex: 1;
         }
         
-        .position-relative {
-            position: relative;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            margin: 0;
-            font-weight: 600;
-            color: var(--dark-text);
-            letter-spacing: -0.02em;
-        }
-        
-        p {
-            margin: 0 0 1rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        img {
-            max-width: 100%;
-        }
-        
-        /* Header styles */
         .header {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
         }
         
-        .navbar {
+        .logo-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px 0;
         }
         
-        .navbar-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
+        .logo-img {
+            max-width: 160px;
+            height: auto;
         }
         
-        .navbar-brand {
-            font-size: 26px;
+        .logo {
+            max-width: 160px;
             font-weight: 700;
-            color: var(--primary);
-            position: relative;
-            padding-left: 12px;
+            font-size: 24px;
+            background: linear-gradient(90deg, var(--white) 0%, var(--highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
         
-        .navbar-brand:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 70%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            border-radius: 4px;
-        }
-        
-        .navbar-button {
-            display: flex;
-            align-items: center;
-        }
-        
-        /* Buttons */
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            box-shadow: var(--button-shadow);
-            letter-spacing: 0.02em;
-        }
-        
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.6s ease;
-        }
-        
-        .button:hover::before {
-            left: 100%;
-        }
-        
-        .primary {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(51, 102, 255, 0.2);
-        }
-        
-        .gradient {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-        }
-        
-        .gradient:hover {
-            background: linear-gradient(45deg, var(--primary-dark), var(--secondary-dark));
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(51, 102, 255, 0.2);
-        }
-        
-        .button-area {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-        
-        .button-text {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        
-        /* Hero section */
-        .hero-section {
-            padding: 120px 0 100px;
-            background-color: var(--light-bg);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .hero-bg-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .hero-background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(51, 102, 255, 0.08) 2px, transparent 2px);
-            background-size: 30px 30px;
-            opacity: 0.8;
-        }
-        
-        .hero-wrapper {
+        .main {
+            padding: 25px 0;
+            text-align: center;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
+            justify-content: center;
         }
         
-        .hero-content-block {
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            padding: 0 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .highlight {
+            color: var(--highlight);
+            font-weight: 700;
+            display: inline;
+        }
+        
+        .main-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #C9D8E0;
+            font-weight: 500;
+        }
+        
+        .bullet-points {
+            text-align: left;
+            margin: 0 auto 30px;
+            max-width: 400px;
+        }
+        
+        .bullet-points li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .bullet-points li:before {
+            content: "✓";
+            color: var(--highlight);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .form-card {
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 15px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .form-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
             text-align: center;
-            animation: fadeIn 1s ease-out;
         }
         
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .input-container {
+            position: relative;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 18px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            color: var(--white);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(0, 116, 224, 0.25);
+        }
+        
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .form-input.valid {
+            border-color: var(--success) !important;
+            background-color: rgba(76, 175, 80, 0.05) !important;
+        }
+        
+        .form-input.invalid {
+            border-color: var(--highlight) !important;
+        }
+        
+        .validation-icon {
+            position: absolute;
+            right: 15px;
+            top: 18px;
+            font-size: 16px;
+            display: none;
+            z-index: 5;
+        }
+        
+        .validation-icon.success {
+            color: var(--success);
+        }
+        
+        .validation-icon.error {
+            color: var(--highlight);
+        }
+        
+        /* Animation pour les validations */
+        @keyframes validationPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .validation-icon.show {
+            display: block;
+            animation: validationPulse 0.3s ease-out;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--primary) 100%);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 20px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            -webkit-appearance: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+        
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .submit-btn:hover::after {
+            opacity: 1;
+        }
+        
+        .submit-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .privacy-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .privacy-text a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+        
+        .privacy-text a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Message de succès */
+        .success-message {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        /* Styles pour le sélecteur de pays */
+        .phone-input-container {
+            position: relative;
+        }
+        
+        .phone-input {
+            padding-left: 90px !important;
+            text-align: left !important;
+            direction: ltr;
+        }
+        
+        .iti {
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+        
+        .iti--allow-dropdown input, 
+        .iti--allow-dropdown input[type=tel] {
+            padding-left: 90px;
+            text-align: left;
+        }
+        
+        .iti__flag-container {
+            z-index: 10;
+        }
+        
+        .iti__country-list {
+            background-color: var(--black);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            max-height: 200px;
+            max-width: 350px;
+        }
+        
+        .iti__country {
+            padding: 10px 15px;
+        }
+        
+        .iti__country:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .iti__country-name {
+            color: var(--white);
+            font-size: 14px;
+        }
+        
+        .iti__dial-code {
+            color: var(--highlight);
+        }
+        
+        .error-message {
+            color: var(--highlight);
+            font-size: 13px;
+            margin-top: 5px;
+            text-align: left;
+            min-height: 20px;
+            font-weight: 500;
+        }
+        
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        .footer-links {
+            margin-top: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 12px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        /* Loader spinner */
+        .loader {
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid var(--highlight);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .submit-btn.loading .loader {
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Animations de la page */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .hero-subtitle-block {
-            margin-bottom: 24px;
+        .main-title, .main-subtitle, .bullet-points, .form-card {
+            animation: fadeIn 0.6s ease-out forwards;
         }
         
-        .hero-subtitle {
-            display: inline-flex;
-            align-items: center;
-            background-color: rgba(51, 102, 255, 0.1);
-            padding: 10px 18px;
-            border-radius: 50px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 10px rgba(51, 102, 255, 0.1);
+        .main-subtitle {
+            animation-delay: 0.2s;
         }
         
-        .hero-subtitle-text {
-            margin: 0;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--primary);
+        .bullet-points {
+            animation-delay: 0.3s;
         }
         
-        .text-primary {
-            color: var(--primary);
+        .form-card {
+            animation-delay: 0.4s;
         }
         
-        .display-heading-1 {
-            font-size: 52px;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--dark-text), #555);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .hero-content-p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: var(--body-text);
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        ._w-750 {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        
-        .body-text-18 {
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--body-text);
-        }
-        
-        .body-text-16 {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--body-text);
-        }
-        
-        .body-text-14 {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--light-text);
-        }
-        
-        /* Why choose us section */
-        .why-choosen-us-section {
-            padding: 100px 0;
-            background-color: #fff;
-            position: relative;
-        }
-        
-        .why-choosen-us-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(51, 102, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(51, 102, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 0;
-        }
-        
-        .why-choosen-us-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .why-choosen-us-widget {
-            background-color: white;
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-        
-        .why-choosen-us-widget:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: rgba(51, 102, 255, 0.2);
-        }
-        
-        .loading-bar {
-            position: relative;
-            height: 10px;
-            margin-bottom: 25px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .base {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        
-        .running {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            border-radius: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        ._1 {
-            width: 25%;
-        }
-        
-        ._2 {
-            width: 50%;
-        }
-        
-        ._3 {
-            width: 75%;
-        }
-        
-        ._4 {
-            width: 100%;
-        }
-        
-        .why-choosen-us-content-wrapper {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .why-choosen-us-content {
-            flex: 1;
-        }
-        
-        .heading-4 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: var(--dark-text);
-        }
-        
-        .regular {
-            font-weight: 500;
-        }
-        
-        /* Services section */
-        .service-section-2 {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-            position: relative;
-        }
-        
-        .section-padding {
-            padding: 100px 0;
-        }
-        
-        .remove-bottom-padding {
-            padding-bottom: 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title-heading {
-            font-size: 40px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        .service-card-list-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .service-card-2 {
-            background-color: white;
-            border-radius: 16px;
-            padding: 35px;
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .box-shadow {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-        }
-        
-        .border {
-            border: 1px solid var(--border-color);
-        }
-        
-        .service-card-2:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: rgba(51, 102, 255, 0.2);
-        }
-        
-        .service-card-content-2 {
-            margin-top: 20px;
-            flex: 1;
-        }
-        
-        .opacity-8 {
-            opacity: 0.8;
-        }
-        
-        /* Demo section styles */
-        .demo-cta {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--border-color);
-        }
-        
-        .demo-cta h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--dark-text);
-        }
-        
-        .whatsapp-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366;
-            color: white;
-            padding: 16px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 20px auto;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
-        }
-        
-        .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.3);
-        }
-        
-        .testimonial-card {
-            background-color: #f5f8ff;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 700px;
-            margin: 30px auto;
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(51, 102, 255, 0.1);
-        }
-        
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-avatar {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            font-size: 26px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(51, 102, 255, 0.2);
-        }
-        
-        .flow-diagram {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 40px auto;
-            max-width: 1000px;
-            flex-wrap: wrap;
-        }
-        
-        .flow-step {
-            text-align: center;
-            flex: 1;
-            min-width: 180px;
-            margin: 15px;
-            transition: var(--transition);
-        }
-        
-        .flow-step:hover {
-            transform: translateY(-5px);
-        }
-        
-        .icon-container {
-            background-color: white;
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 10px 25px rgba(51, 102, 255, 0.1);
-            border: 1px solid rgba(51, 102, 255, 0.1);
-            transition: var(--transition);
-        }
-        
-        .flow-step:hover .icon-container {
-            background-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(51, 102, 255, 0.2);
-        }
-        
-        .flow-step:hover .icon-number {
-            color: white !important;
-        }
-        
-        .icon-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .flow-arrow {
-            margin: 0 10px;
-            font-size: 24px;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .benefits {
-            background-color: white;
-            padding: 40px;
-            border-radius: 16px;
-            margin-top: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--border-color);
-        }
-        
-        .benefits h3 {
-            font-size: 28px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .benefit-item {
-            flex: 1;
-            min-width: 280px;
-            margin: 15px;
-            display: flex;
-            align-items: flex-start;
-            transition: var(--transition);
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-3px);
-        }
-        
-        .benefit-icon {
-            background-color: #e0f2fe;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 20px;
-            transition: var(--transition);
-        }
-        
-        .benefit-item:hover .benefit-icon {
-            background-color: var(--primary);
-            color: white;
-            box-shadow: 0 10px 20px rgba(51, 102, 255, 0.2);
-        }
-        
-        .benefit-content h4 {
-            margin: 0 0 10px;
-            font-size: 20px;
-        }
-        
-        /* CTA section */
-        .cta-section {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-            position: relative;
-        }
-        
-        .cta-wrapper-left {
-            display: flex;
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            position: relative;
-            border: 1px solid rgba(51, 102, 255, 0.1);
-        }
-        
-        .cta-wrapper-left::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(51, 102, 255, 0.05) 0%, rgba(136, 51, 255, 0.05) 100%);
-            z-index: 0;
-            clip-path: polygon(100% 0, 0 0, 100% 100%);
-        }
-        
-        .cta-left-block {
-            flex: 1;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta-content-left {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .heading-2 {
-            font-size: 40px;
-            line-height: 1.2;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--dark-text), #555);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        ._w-390 {
-            max-width: 390px;
-        }
-        
-        .text-secondary {
-            color: var(--body-text);
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 991px) {
-            .hero-section {
-                padding: 80px 0;
+        /* Optimisation mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
             }
             
-            .why-choosen-us-wrapper,
-            .brand-logo-wrapper-2 {
-                grid-template-columns: 1fr;
+            .main {
+                padding: 15px 0;
             }
             
-            .cta-wrapper-left {
-                flex-direction: column;
+            .main-title {
+                font-size: 24px;
+                margin-bottom: 15px;
             }
             
-            .display-heading-1 {
-                font-size: 36px;
+            .main-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+                margin-top: 25px;
             }
             
-            .heading-2 {
-                font-size: 32px;
+            .bullet-points {
+                font-size: 15px;
             }
             
-            .section-title-heading {
-                font-size: 32px;
+            .form-card {
+                padding: 25px 18px;
+                margin-top: 15px;
             }
             
-            .cta-left-block {
-                padding: 40px;
+            .form-title {
+                font-size: 20px;
+                margin-bottom: 22px;
             }
             
-            .service-card-list-2 {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            .form-label {
+                font-size: 16px;
+                margin-bottom: 10px;
             }
             
-            .why-choosen-us-widget,
-            .service-card-2,
-            .demo-cta,
-            .benefits {
-                padding: 25px;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .hero-section {
-                padding: 60px 0;
-            }
-            
-            .display-heading-1 {
-                font-size: 32px;
-            }
-            
-            .hero-content-p {
+            .form-input {
+                padding: 18px 15px;
                 font-size: 18px;
-                max-width: 100%;
+                margin-bottom: 18px;
             }
             
-            .section-padding {
-                padding: 60px 0;
+            .submit-btn {
+                font-size: 18px;
+                padding: 18px;
+                margin-top: 20px;
             }
             
-            .section-title-heading {
-                font-size: 28px;
+            /* Augmenter la taille des champs sur mobile */
+            input[type="email"], input[type="tel"] {
+                font-size: 16px !important; /* Empêche le zoom sur iOS */
+                height: 60px;
             }
-            
-            .heading-2 {
-                font-size: 28px;
+        }
+        
+        /* Optimisations spécifiques pour les drapeaux et le sélecteur de pays */
+        .iti__flag {
+            background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/img/flags.png");
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .iti__flag {
+                background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/img/flags@2x.png");
             }
-            
-            .why-choosen-us-content-wrapper {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .benefit-content {
-                font-size: 14px;
-            }
+        }
+        
+        .iti__selected-flag {
+            padding: 0 12px 0 15px;
+        }
+        
+        .iti__flag-container:hover .iti__selected-flag {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .iti__country-list {
+            width: 350px;
+            max-width: 100vw;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="container">
-            <div class="navbar position-relative">
-                <div class="navbar-wrapper">
-                    <a href="#" class="navbar-brand">Swifthelp</a>
-                    <div class="navbar-button">
-                        <a href="https://calendly.com/hamoureliasse/session-offerte-sur-les-agents-ia-clone" target="_blank" class="button primary">
-                            <div class="button-area primary">
-                                <p class="button-text">Appel de découverte</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="logo-container">
+                <img src="https://cdn.discordapp.com/attachments/1096588159367786507/1351641224662224896/LANC-5.png?ex=67db1d7c&is=67d9cbfc&hm=605bcc8d1b244139aa1aedc867ab03c8bf416fa2db688ae83916326a13954968&" alt="LANC" class="logo-img" width="160" height="40" loading="lazy" onerror="this.style.display='none'; document.querySelector('.logo').style.display='block';">
+                <h2 class="logo" style="display:none;">LANC</h2>
             </div>
         </div>
-    </div>
-
-    <section class="hero-section content-section">
-        <div class="container position-relative">
-            <div class="hero-bg-wrapper">
-                <div class="hero-background-pattern"></div>
-            </div>
-            <div class="hero-wrapper">
-                <div class="hero-content-block">
-                    <div class="hero-top-content-block">
-                        <div class="hero-subtitle-block">
-                            <div class="hero-subtitle">
-                                <p class="hero-subtitle-text text-primary body-text-14">Automatise ton Entreprise</p>
-                            </div>
-                        </div>
-                        <div class="_w-750">
-                            <h1 class="display-heading-1">Scale ton Business - Infrastructure d'Agents IA</h1>
-                        </div>
-                        <p class="hero-content-p body-text-18">Solutions d'automatisation intelligentes pour votre entreprise.</p>
-                    </div>
-                    <a href="https://calendly.com/hamoureliasse/session-offerte-sur-les-agents-ia-clone" target="_blank" class="button gradient">
-                        <div class="button-area">
-                            <p class="button-text">RDV Consulting</p>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="why-choosen-us-section">
+    </header>
+    
+    <main class="main">
         <div class="container">
-            <div class="why-choosen-us-wrapper">
-                <div class="why-choosen-us-widget">
-                    <div class="loading-bar">
-                        <div class="running gradient-primary _1"></div>
-                        <div class="base"></div>
-                    </div>
-                    <div class="why-choosen-us-content-wrapper">
-                        <p class="body-text-14">01.</p>
-                        <div class="why-choosen-us-content">
-                            <div class="heading-4 regular">Audit </div>
-                            <p class="body-text-16 why-choosen-us-content-p">Nous commençons par une analyse approfondie de vos processus actuels</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-choosen-us-widget">
-                    <div class="loading-bar">
-                        <div class="running gradient-primary _2"></div>
-                        <div class="base"></div>
-                    </div>
-                    <div class="why-choosen-us-content-wrapper">
-                        <p class="body-text-14">02.</p>
-                        <div class="why-choosen-us-content">
-                            <div class="heading-4 regular">Stratégie </div>
-                            <p class="body-text-16 why-choosen-us-content-p">Sur la base des résultats de l'audit, nous définissons une stratégie d'automatisation sur-mesure.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-choosen-us-widget">
-                    <div class="loading-bar">
-                        <div class="running gradient-primary _3"></div>
-                        <div class="base"></div>
-                    </div>
-                    <div class="why-choosen-us-content-wrapper">
-                        <p class="body-text-14">03.</p>
-                        <div class="why-choosen-us-content">
-                            <div class="heading-4 regular">Développement</div>
-                            <p class="body-text-16 why-choosen-us-content-p">Nous concevons et programmons vos automatisations (très rapidement).</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-choosen-us-widget">
-                    <div class="loading-bar">
-                        <div class="running gradient-primary _4"></div>
-                        <div class="base"></div>
-                    </div>
-                    <div class="why-choosen-us-content-wrapper">
-                        <p class="body-text-14">04.</p>
-                        <div class="why-choosen-us-content">
-                            <div class="heading-4 regular">Implémentation</div>
-                            <p class="body-text-16 why-choosen-us-content-p">Une fois les automatisations développées, nous les déployons dans votre environnement opérationnel.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="service-section-2 section-padding remove-bottom-padding">
-        <div class="container position-relative">
-            <div class="service-wrapper-2 position-relative">
-                <div class="section-title">
-                    <h2 class="section-title-heading">Des possibilités (quasi) illimitées.</h2>
-                </div>
-                <div class="service-card-list-2">
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Agents IA Vocaux</div>
-                            <p class="body-text-16 opacity-8">Créez des solutions intelligentes avec nos agents IA vocaux personnalisés, conçus pour automatiser vos appels et conversations</p>
-                        </div>
-                    </div>
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Agents IA WhatsApp</div>
-                            <p class="body-text-16 opacity-8">Déployez des assistants intelligents sur WhatsApp pour répondre instantanément à vos clients et prospects.</p>
-                        </div>
-                    </div>
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Agents IA Conversationnels</div>
-                            <p class="body-text-16 opacity-8">Solutions de chatbot avancées pour votre site web, intégrant l'IA pour des conversations naturelles et efficaces.</p>
-                        </div>
-                    </div>
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Workflow Personnalisés</div>
-                            <p class="body-text-16 opacity-8">Optimisez vos processus de vente avec des workflows automatisés adaptés à vos besoins spécifiques.</p>
-                        </div>
-                    </div>
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Lead Generation</div>
-                            <p class="body-text-16 opacity-8">Système de cold email, automatisation des process de ventes (CRM) pour maximiser vos conversions.</p>
-                        </div>
-                    </div>
-                    <div class="service-card-2 box-shadow border">
-                        <div class="service-card-content-2">
-                            <div class="heading-4">Consultation IA</div>
-                            <p class="body-text-16 opacity-8">Accompagnement stratégique pour intégrer l'IA dans votre entreprise et devenir un partenaire de votre croissance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="demo" class="service-section-2 section-padding remove-bottom-padding">
-        <div class="container position-relative">
-            <div class="service-wrapper-2 position-relative">
-                <div class="section-title">
-                    <h2 class="section-title-heading">Notre Solution de Qualification des Leads</h2>
-                </div>
-                
-                <div class="demo-cta">
-                    <h3>Essayez notre Agent IA en direct</h3>
-                    <p style="margin-bottom: 15px; font-style: italic; color: #555;">Agent IA développé pour ISITIMMO.com, agence immobilière à Nice</p>
-                    <a href="https://api.whatsapp.com/send/?phone=330756967915&text=Salut&type=phone_number&app_absent=0" target="_blank" class="whatsapp-button">
-                        <span style="display: flex; align-items: center; justify-content: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="margin-right: 10px; fill: white;">
-                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.72.045.419-.1.824z"></path>
-                            </svg>
-                            Essayer l'Agent IA
-                        </span>
-                    </a>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar">MB</div>
-                            <div>
-                                <h4 style="margin: 0; color: #333; font-size: 18px;">Marc Bergaglio</h4>
-                                <p style="margin: 5px 0 0; color: #666;">Directeur, ISITIMMO.com - Nice</p>
-                            </div>
-                        </div>
-                        <p style="font-style: italic; color: #555; line-height: 1.7; margin-bottom: 20px;">
-                            "L'Agent IA WhatsApp nous a permis de qualifier efficacement nos leads immobiliers. Notre temps est désormais concentré sur des clients à fort potentiel, augmentant de 35% nos mandats signés en 3 mois."
-                        </p>
-                        <div style="display: flex;">
-                            <span style="color: #FFD700; font-size: 20px;">★★★★★</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="process-flow" style="margin: 60px 0; text-align: center;">
-                    <h3 style="font-size: 28px; margin-bottom: 40px;">Notre Processus de Qualification des Leads</h3>
-                    
-                    <div class="flow-diagram">
-                        <!-- Meta Ads -->
-                        <div class="flow-step">
-                            <div class="icon-container">
-                                <div class="icon-number">1</div>
-                            </div>
-                            <h4 style="margin: 0 0 12px; font-size: 20px;">Meta Ads</h4>
-                            <p style="margin: 0; font-size: 15px;">Génération de leads via Facebook & Instagram</p>
-                        </div>
-                        
-                        <!-- Arrow -->
-                        <div class="flow-arrow">→</div>
-                        
-                        <!-- WhatsApp IA -->
-                        <div class="flow-step">
-                            <div class="icon-container">
-                                <div class="icon-number">2</div>
-                            </div>
-                            <h4 style="margin: 0 0 12px; font-size: 20px;">Agent IA WhatsApp</h4>
-                            <p style="margin: 0; font-size: 15px;">Répond en moins de 1 minute</p>
-                        </div>
-                        
-                        <!-- Arrow -->
-                        <div class="flow-arrow">→</div>
-                        
-                        <!-- Qualification IA -->
-                        <div class="flow-step">
-                            <div class="icon-container">
-                                <div class="icon-number">3</div>
-                            </div>
-                            <h4 style="margin: 0 0 12px; font-size: 20px;">Qualification IA</h4>
-                            <p style="margin: 0; font-size: 15px;">Pose des questions et filtre automatiquement</p>
-                        </div>
-                        
-                        <!-- Arrow -->
-                        <div class="flow-arrow">→</div>
-                        
-                        <!-- Résultat -->
-                        <div class="flow-step">
-                            <div class="icon-container">
-                                <div class="icon-number">4</div>
-                            </div>
-                            <h4 style="margin: 0 0 12px; font-size: 20px;">Prise de RDV</h4>
-                            <p style="margin: 0; font-size: 15px;">Uniquement pour les leads qualifiés</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="benefits">
-                    <h3>Avantages de Notre Solution</h3>
-                    
-                    <div style="display: flex; flex-wrap: wrap; margin-top: 30px;">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">+</div>
-                            <div class="benefit-content">
-                                <h4>Speed to Lead</h4>
-                                <p style="margin: 0; font-size: 15px;">Réponse instantanée en moins d'1 minute, 24h/24 et 7j/7. Augmente significativement le taux de conversion.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <div class="benefit-icon">+</div>
-                            <div class="benefit-content">
-                                <h4>Conversation Personnalisée</h4>
-                                <p style="margin: 0; font-size: 15px;">L'agent IA s'adapte aux besoins et questions spécifiques de chaque prospect pour une expérience sur mesure.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <div class="benefit-icon">+</div>
-                            <div class="benefit-content">
-                                <h4>Qualification Efficace</h4>
-                                <p style="margin: 0; font-size: 15px;">Filtre automatiquement les prospects non pertinents pour concentrer vos ressources commerciales sur les leads à fort potentiel.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <div class="benefit-icon">+</div>
-                            <div class="benefit-content">
-                                <h4>Prise de RDV Automatisée</h4>
-                                <p style="margin: 0; font-size: 15px;">Pour les leads qualifiés, l'agent réserve directement un rendez-vous avec le commercial, optimisant ainsi votre taux de conversion.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px;">
-                    <h3 style="font-size: 28px; margin-bottom: 30px;">Prêt à transformer votre acquisition client?</h3>
-                    <a href="https://calendly.com/hamoureliasse/session-offerte-sur-les-agents-ia-clone" target="_blank" class="button gradient">
-                        <div class="button-area">
-                            <p class="button-text">Contactez-nous</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-us" class="cta-section">
-        <div class="container">
-            <div class="cta-wrapper-left position-relative box-shadow">
-                <div class="cta-left-block">
-                    <div class="cta-content-left">
-                        <div class="_w-390">
-                            <div class="heading-2 regular">Automatise ton entreprise</div>
-                        </div>
-                        <p class="body-text-16 text-secondary opacity-8">Découvrez comment l'IA peut transformer votre business</p>
-                    </div>
-                    <a href="https://calendly.com/hamoureliasse/session-offerte-sur-les-agents-ia-clone" target="_blank" class="button gradient">
-                        <div class="button-area">
-                            <p class="button-text">Audit Gratuit</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Script pour gérer les ancres
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href^="#"]');
+            <h1 class="main-title">
+    Découvrez comment obtenir <span class="highlight">votre premier client SMMA</span> en 45 jours à l'aide de l'IA
+</h1>
             
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
+            <div class="form-card">
+                <h3 class="form-title">Accédez à la masterclass gratuite</h3>
+                
+                <form id="leadForm" onsubmit="return handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Votre email :</label>
+                        <div class="input-container">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Entrez votre email" required>
+                            <span class="validation-icon success">✓</span>
+                            <span class="validation-icon error">✗</span>
+                        </div>
+                        <div id="email-error-msg" class="error-message"></div>
+                    </div>
                     
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Votre numéro de téléphone :</label>
+                        <div class="phone-input-container input-container">
+                            <input type="tel" id="phone" name="phone" class="form-input phone-input" placeholder="Entrez votre numéro de téléphone" required>
+                            <span class="validation-icon success">✓</span>
+                            <span class="validation-icon error">✗</span>
+                        </div>
+                        <div id="phone-error-msg" class="error-message"></div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="submit-btn" onclick="trackButtonClick()">
+                        <span class="loader"></span>
+                        ACCÉDER À LA MASTERCLASS
+                    </button>
+                </form>
+                
+                <p class="privacy-text">
+                    En soumettant ce formulaire, vous acceptez notre <a href="https://eliassaoe.github.io/page_vente/confidentialite" target="_blank">politique de confidentialité</a>.
+                </p>
+            </div>
+            
+            <p class="main-subtitle">
+                Apprenez à lancer, développer et faire prospérer votre agence de marketing digital
+            </p>
+            
+            <ul class="bullet-points">
+                <li>Créez votre agence SMMA profitable sans expérience préalable</li>
+                <li>Maîtrisez l'art d'acquérir des clients prêts à payer pour vos services</li>
+                <li>Développez des stratégies marketing efficaces pour vos clients</li>
+                <li>Automatisez vos processus pour générer des revenus récurrents</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LANC - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="https://eliassaoe.github.io/page_vente/conditions" target="_blank">Conditions d'utilisation</a>
+                <a href="https://eliassaoe.github.io/page_vente/confidentialite" target="_blank">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialiser le sélecteur de pays pour téléphone
+        let phoneInput;
+        let isPhoneValid = false;
+        
+        // Configurez ici l'URL de votre webhook
+        const WEBHOOK_URL = "https://eliasse-n8n.onrender.com/webhook/ae09b384-6502-48cc-8a27-86fc0df8dcef";
+        
+        // Validation améliorée de l'email
+        function validateEmail(email) {
+            // Regex plus robuste pour valider l'email
+            const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return emailRegex.test(String(email).toLowerCase());
+        }
+
+        // Fonction pour nettoyer les entrées contre les injections XSS
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialiser les validations visuelles
+            initFormValidation();
+            
+            // Initialiser le sélecteur de pays
+            const phoneInputField = document.querySelector("#phone");
+            phoneInput = window.intlTelInput(phoneInputField, {
+                initialCountry: "fr",
+                preferredCountries: ["fr", "be", "ch", "ca"],
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js",
+                separateDialCode: true,
+                autoPlaceholder: "aggressive",
+                allowDropdown: true,
+                dropdownContainer: document.body
             });
             
-            // Animation des barres de progression au scroll
-            const animateOnScroll = function() {
-                const widgets = document.querySelectorAll('.why-choosen-us-widget');
-                widgets.forEach(widget => {
-                    const position = widget.getBoundingClientRect();
-                    if (position.top < window.innerHeight && position.bottom >= 0) {
-                        const bar = widget.querySelector('.running');
-                        if (bar) {
-                            bar.style.width = bar.className.includes('_1') ? '25%' : 
-                                             bar.className.includes('_2') ? '50%' : 
-                                             bar.className.includes('_3') ? '75%' : '100%';
-                        }
-                    }
-                });
-            };
+            // Valider le numéro de téléphone lors de la saisie
+            phoneInputField.addEventListener("input", function() {
+                validatePhoneNumber();
+            });
             
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Initial animation check
-        });
-    </script>
-</body>
-</html>
+            // Mettre à jour le placeholder quand le pays change
+            phoneInputField.addEventListener("countrychange", function() {
+                validatePhoneNumber();
+            });
+            
+            // Focus automatique sur le premier champ
+            setTimeout(function() {
+                document.getElementById('email').focus();
+            }, 800);
+            
+            // Tracking supprimé
